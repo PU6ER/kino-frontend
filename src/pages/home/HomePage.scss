@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	&__header {
+		max-width: screen;
+		display: flex;
+		justify-content: center;
+		backdrop-filter: blur(15px);
+		position: fixed; /* Фиксируем навбар */
+		top: 0; /* Прижимаем навбар к верху экрана */
+		left: 0; /* Прижимаем навбар к левому краю экрана */
+		z-index: 1000;
+		// background-color: rgba(133, 131, 131, 0.214);
+		width: 100%;
+		transition: transform 0.3s ease-out; /* Добавляем переход для свойства transform */
+
+		&-hidden {
+			transform: translateY(-100%); /* Скрываем навбар, сдвигая его вверх */
+			transition: transform 0.3s ease-out; /* Добавляем переход для свойства transform */
+		}
+	}
+}
