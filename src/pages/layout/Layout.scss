@@ -1,0 +1,23 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	&__header {
+		max-width: screen;
+		display: flex;
+		justify-content: center;
+		// backdrop-filter: blur(15px);
+		background-color: #242424;	
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+
+		width: 100%;
+		transition: transform 0.3s ease-out;
+
+		&-hidden {
+			transform: translateY(-100%);
+			transition: transform 0.3s ease-out;
+		}
+	}
+}
