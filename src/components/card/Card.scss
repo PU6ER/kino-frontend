@@ -1,0 +1,64 @@
+.card {
+	height: 450px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+
+	&__poster {
+		border-radius: 20px;
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		height: 50px;
+		gap: 10px;
+		width: 100%;
+
+		div {
+			display: flex;
+			flex-direction: column;
+		}
+		.title-wrapper {
+			width: 100%;
+		}
+
+		.title {
+			width: 300px;
+			font-weight: 700;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			position: relative;
+			margin: 0;
+		}
+		.release{
+			font-weight: 700;
+			color: #ffffff9a
+		}
+	}
+	.link {
+		position: relative;
+		transition: scale ease-in-out 0.2s;
+		cursor: pointer;
+	}
+	.link:hover {
+		scale: 1.03;
+	}
+	.vote {
+		border-radius: 10px;
+		background: linear-gradient(45deg, #08f2fa, #06bcc3b3);
+		position: absolute;
+		display: flex;
+		top: 10px;
+		left: 10px;
+		width: 40px;
+		padding: 5px;
+		align-items: center;
+		justify-content: center;
+
+		font-size: 26px;
+		font-weight: bold;
+		color: #fff;
+	}
+}
