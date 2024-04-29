@@ -1,0 +1,33 @@
+.carousel {
+	display: flex;
+	max-width: 100%;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	gap: 20px;
+	padding: 20px 0;
+	/* Стиль скролла */
+	// scrollbar-width: thin; /* Толщина скроллбара */
+	// scrollbar-color: #000 #fff; /* Цвет скроллбара и фона */
+}
+
+.card--similar {
+	min-width: 200px;
+	max-width: 200px;
+	flex-shrink: 0;
+}
+.carousel::-webkit-scrollbar {
+	/* Стиль скроллбара для WebKit браузеров (Safari, Chrome) */
+	width: 8px; /* Толщина скроллбара */
+	height: 8px; /* Высота скроллбара */
+}
+
+.carousel::-webkit-scrollbar-track {
+	/* Стиль фона скроллбара для WebKit браузеров (Safari, Chrome) */
+	background-color: #242424; /* Цвет фона скроллбара */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+	/* Стиль самого скроллбара для WebKit браузеров (Safari, Chrome) */
+	background-color: #08f2fa; 
+	border-radius: 5px; /* Радиус скругления скроллбара */
+}
