@@ -1,10 +1,9 @@
 import { usePopularMovies } from '../../hooks/usePopularMovies'
+import { ICardListProps } from '../../types/movie.types'
 import Card from '../card/Card'
 import './PopularList.scss'
 
-interface ICardListProps {
-	page: number
-}
+
 
 const PopularList = ({ page }: ICardListProps) => {
 	const { data, isLoading } = usePopularMovies(page)
@@ -12,7 +11,7 @@ const PopularList = ({ page }: ICardListProps) => {
 	return (
 		<div className='container'>
 			{isLoading ? (
-				<h1>Loading...</h1>
+				<div className='loader' />
 			) : (
 				<div className='grid'>
 					{data &&
