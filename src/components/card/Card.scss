@@ -32,15 +32,16 @@
 			position: relative;
 			margin: 0;
 		}
-		.release{
+		.release {
 			font-weight: 700;
-			color: #ffffff9a
+			color: #ffffff9a;
 		}
 	}
 	.link {
 		position: relative;
 		transition: scale ease-in-out 0.2s;
 		cursor: pointer;
+		outline: none;
 	}
 	.link:hover {
 		scale: 1.03;
@@ -60,5 +61,30 @@
 		font-size: 26px;
 		font-weight: bold;
 		color: #fff;
+	}
+	.loader {
+		width: 300px;
+		height: 400px;
+		background-color: #f3f3f31a;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.loader::after {
+		content: '';
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: 5px solid #000;
+		border-top-color: #08f2fa;
+		animation: spin 1s ease-in-out infinite;
+	}
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
 	}
 }
