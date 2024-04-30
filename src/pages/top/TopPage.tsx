@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Pagination from '../../components/pagination/Pagination'
-import PopularList from '../../components/popular-list/PopularList'
 import './TopPage.scss'
 import TopList from '../../components/top-list/TopList'
 
