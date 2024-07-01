@@ -1,15 +1,14 @@
 import { useParams } from 'react-router-dom'
-import { useSimilar } from '../../hooks/useSimilar'
-import Card from '../card/Card'
 import './SimilarList.scss'
 
 const SimilarList = () => {
 	const { movieId } = useParams()
-	const { data, isLoading, isSuccess } = useSimilar(movieId ?? '')
+	// const { data, isLoading, isSuccess } = useSimilar(movieId ?? '')
+	// const { data, isLoading, isSuccess } = usePopularMovies()
 
 	return (
 		<div className='container'>
-			{isLoading ? (
+			{/* {isLoading ? (
 				<div className='loader' />
 			) : (
 				<>
@@ -19,7 +18,8 @@ const SimilarList = () => {
 							data.results.map(movie => <Card movie={movie} key={movie.id} />)}
 					</div>
 				</>
-			)}
+			)} */}
+			{movieId}
 		</div>
 	)
 }

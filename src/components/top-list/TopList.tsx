@@ -1,10 +1,11 @@
+import { usePopularMovies } from '../../hooks/usePopularMovies'
 import { useTopRated } from '../../hooks/useTopRated'
 import { ICardListProps } from '../../types/movie.types'
 import Card from '../card/Card'
 import './TopList.scss'
 
 const TopList = ({ page }: ICardListProps) => {
-	const { data, isLoading } = useTopRated(page)
+	const { data, isLoading } = usePopularMovies(page)
 
 	return (
 		<div className='container'>
@@ -13,7 +14,7 @@ const TopList = ({ page }: ICardListProps) => {
 			) : (
 				<div className='grid'>
 					{data &&
-						data.results.map(movie => <Card movie={movie} key={movie.id} />)}
+						data.docs.map(movie => <Card movie={movie} key={movie.id} />)}
 				</div>
 			)}
 		</div>
