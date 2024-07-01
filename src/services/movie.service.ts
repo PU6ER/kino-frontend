@@ -1,22 +1,22 @@
 import { axiosBase } from '../api/api'
 import { API_KEY } from '../constants/api.constants'
-import { IDetails, IMovieList } from '../types/movie.types'
+import { IMovie, IMovieList } from '../types/movie.types'
 
 class MovieService {
-	private BASE_URL = 'movie'
+	private BASE_URL = '/movie'
 
 	async getPopular(page: number): Promise<IMovieList> {
 		const response = await axiosBase.get<IMovieList>(
 			`${
 				this.BASE_URL +
-				`/popular?api_key=${API_KEY}&language=ru-RU&page=${page}`
+				`?page=${page}&limit=12&notNullFields=backdrop.url&notNullFields=poster.url&notNullFields=movieLength&notNullFields=rating.kp&notNullFields=watchability.items.name&rating.kp=6-10`
 			}`
 		)
 		return response.data
 	}
 	async getMovie(movieId: string) {
-		const response = await axiosBase.get<IDetails>(
-			`${this.BASE_URL + `/${movieId}?api_key=${API_KEY}&language=ru-RU`}`
+		const response = await axiosBase.get<IMovie>(
+			`${this.BASE_URL + `/${movieId}`}`
 		)
 		return response.data
 	}
