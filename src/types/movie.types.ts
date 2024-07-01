@@ -1,20 +1,52 @@
-
-
 export interface IMovie {
-	adult: boolean
-	backdrop_path: string
-	genre_ids: number[]
+	ageRating?: number
+	alternativeName?: string
+	backdrop: { url: string; previewUrl: string }
+	poster: { url: string; previewUrl: string }
+	countries: { name: string }[]
+	description?: string
+	enName?: string
+	genres: { name: string }[]
 	id: number
-	original_language: string
-	original_title: string
-	overview: string
-	popularity: number
-	poster_path: string
-	release_date: string
-	title: string
-	video: boolean
-	vote_average: number
-	vote_count: number
+	isSeries: boolean
+	movieLength: number
+	name: string
+	rating: {
+		kp: number
+		imdb: number
+		filmCritics: number
+		russianFilmCritics: number
+		await: number
+	}
+	ratingMpaa?: number
+	seriesLength?: number
+	shortDescription?: string
+	status?: string
+	ticketsOnSale?: boolean
+	top10?: boolean
+	top250?: boolean
+	totalSeriesLength?: number
+	type: string
+	persons: {
+		id: number
+		photo: string
+		name: string
+		enName: string
+		description?: string
+		profession: string
+		enProfession: string
+	}[]
+	watchability: {
+		items: { name: string; logo: { url: string }; url: string }[]
+	}
+	votes?: {
+		kp: number
+		imdb: number
+		filmCritics: number
+		russianFilmCritics: number
+		await: number
+	}
+	year: number
 }
 
 export interface IDetails {
@@ -72,11 +104,11 @@ export interface IDetails {
 
 export interface IMovieList {
 	page: number
-	results: IMovie[]
-	total_pages: number
-	total_results: number
+	docs: IMovie[]
+	limit: number
+	pages: number
+	total: number
 }
-
 
 export interface ICardListProps {
 	page: number
