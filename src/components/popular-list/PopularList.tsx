@@ -3,10 +3,9 @@ import { ICardListProps } from '../../types/movie.types'
 import Card from '../card/Card'
 import './PopularList.scss'
 
-
-
 const PopularList = ({ page }: ICardListProps) => {
 	const { data, isLoading } = usePopularMovies(page)
+	console.log('popular kinopoisk', data)
 
 	return (
 		<div className='container'>
@@ -15,7 +14,7 @@ const PopularList = ({ page }: ICardListProps) => {
 			) : (
 				<div className='grid'>
 					{data &&
-						data.results.map(movie => <Card movie={movie} key={movie.id} />)}
+						data.docs.map(movie => <Card movie={movie} key={movie.id} />)}
 				</div>
 			)}
 		</div>
