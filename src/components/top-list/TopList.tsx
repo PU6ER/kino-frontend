@@ -1,5 +1,4 @@
 import { usePopularMovies } from '../../hooks/usePopularMovies'
-import { useTopRated } from '../../hooks/useTopRated'
 import { ICardListProps } from '../../types/movie.types'
 import Card from '../card/Card'
 import './TopList.scss'
