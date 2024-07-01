@@ -1,4 +1,6 @@
 .card {
+	// height: 450px;
+	// width: 300px;
 	height: 450px;
 	width: 300px;
 	display: flex;
@@ -6,6 +8,10 @@
 
 	&__poster {
 		border-radius: 20px;
+		height: 400px;
+		width: 300px;
+		// width: 300px;
+		// height: 400px;
 	}
 
 	&__footer {
@@ -28,6 +34,7 @@
 			font-weight: 700;
 			overflow: hidden;
 			white-space: nowrap;
+
 			text-overflow: ellipsis;
 			position: relative;
 			margin: 0;
@@ -88,3 +95,61 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 1280px) {
+	
+}
+@media only screen and (min-width: 1024px) {
+	.card {
+		height: 400px;
+		width: 250px;
+		.title {
+			width: 250px;
+		}
+	}
+	.card__poster {
+		height: 350px;
+		width: 250px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.card {
+		height: 400px;
+		width: 250px;
+		.title {
+			width: 200px;
+		}
+		&__footer {
+			font-size: 14px;
+		}
+		.vote {
+			font-size: 22px;
+			width: 35px;
+		}
+	}
+	.card__poster {
+		height: 350px;
+		width: 250px;
+	}
+}
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+	.card {
+		height: 350px;
+		width: 200px;
+		.title {
+			width: 200px;
+		}
+		&__footer {
+			font-size: 14px;
+		}
+		.vote {
+			font-size: 22px;
+			width: 35px;
+		}
+	}
+	.card__poster {
+		height: 300px;
+		width: 200px;
+	}
+}
+

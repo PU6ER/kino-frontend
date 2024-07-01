@@ -5,9 +5,13 @@ interface IPaginationProps {
 	currentPage: number
 }
 const Pagination = ({ handlePageChange, currentPage }: IPaginationProps) => {
-	const totalPages = 5
+	const totalPages = 10
 	const pages = []
-	for (let i = 1; i <= totalPages; i++) {
+	for (
+		let i = Math.max(1, currentPage - 2);
+		i <= Math.min(totalPages, currentPage + 2);
+		i++
+	) {
 		pages.push(
 			<button
 				key={i}
@@ -24,14 +28,14 @@ const Pagination = ({ handlePageChange, currentPage }: IPaginationProps) => {
 				onClick={() => handlePageChange(currentPage - 1)}
 				disabled={currentPage === 1}
 			>
-				Назад
+				&larr;
 			</button>
 			{pages}
 			<button
 				onClick={() => handlePageChange(currentPage + 1)}
 				disabled={currentPage === totalPages}
 			>
-				Далее
+				&rarr;
 			</button>
 		</div>
 	)
