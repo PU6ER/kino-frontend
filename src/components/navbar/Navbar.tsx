@@ -15,11 +15,13 @@ const Navbar = () => {
 	useEffect(() => {
 		if (query) {
 			setSearchQuery(query)
+		} else {
+			setSearchQuery('')
 		}
 	}, [query])
 	return (
 		<div className='navbar'>
-			<Link to='/'>
+			<Link to='/' onClick={() => setSearchQuery('')}>
 				<div className='navbar__logo'>KINO</div>
 				{/* <img src='../kino-logo.svg' className='navbar__logo' /> */}
 			</Link>
