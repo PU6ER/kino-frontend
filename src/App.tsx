@@ -3,8 +3,7 @@ import './App.scss'
 import CardPage from './pages/card/CardPage'
 import HomePage from './pages/home/HomePage'
 import Layout from './pages/layout/Layout'
-import TopPage from './pages/top/TopPage'
-import UpcomingPage from './pages/upcoming/UpcomingPage'
+import SearchPage from './pages/search/SearchPage'
 
 function App() {
 	return (
@@ -13,11 +12,8 @@ function App() {
 				<Route path='/' element={<Layout />}>
 					<Route index element={<HomePage />} />
 					<Route path='movie/:movieId' element={<CardPage />} />
-					<Route path='top' element={<TopPage />} />
-					<Route path='upcoming' element={<UpcomingPage />} />
+					<Route path='search/:query' element={<SearchPage />} />
 				</Route>
-
-				<Route path='/dashboard'></Route>
 			</Routes>
 		</BrowserRouter>
 	)
