@@ -49,6 +49,30 @@ export interface IMovie {
 	year: number
 }
 
+
+export interface IReviewResponse {
+	docs: IReview[]
+	limit: number
+	page: number
+	pages: number
+	total: number
+}
+
+export interface IReview {
+	id: number
+	movieId: number
+	title: string
+	type: string
+	review: string
+	date: string
+	author: string
+	userRating: number
+	authorId: number
+	createdAt: string
+	updatedAt: string
+	
+}
+
 export interface IDetails {
 	adult: boolean
 	backdrop_path: string
