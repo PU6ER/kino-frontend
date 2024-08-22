@@ -11,7 +11,7 @@ const HomePage = () => {
 	}
 
 	return (
-		<div className='container'>
+		<div className='containerHome'>
 			<PopularList page={page} />
 			<Pagination handlePageChange={handlePageChange} currentPage={page} />
 		</div>
