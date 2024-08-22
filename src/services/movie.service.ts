@@ -9,7 +9,7 @@ class MovieService {
 		const response = await axiosBase.get<IMovieList>(
 			`${
 				this.BASE_URL +
-				`?page=${page}&limit=12&notNullFields=backdrop.url&notNullFields=poster.url&notNullFields=movieLength&notNullFields=rating.kp&notNullFields=watchability.items.name&rating.kp=6-10`
+				`?page=${page}&limit=12&notNullFields=backdrop.url&notNullFields=poster.url&notNullFields=movieLength&notNullFields=rating.kp&notNullFields=watchability.items.name&rating.kp=6-10&lists=popular-films`
 			}`
 		)
 		return response.data
@@ -20,6 +20,7 @@ class MovieService {
 		)
 		return response.data
 	}
+
 	async getTopRated(page: number) {
 		const response = await axiosBase.get<IMovieList>(
 			`${
