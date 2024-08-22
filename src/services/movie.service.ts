@@ -21,6 +21,13 @@ class MovieService {
 		return response.data
 	}
 
+	async getMoviesBySearchQuery(query: string, page: number) {
+		const response = await axiosBase.get<IMovieList>(
+			`${this.BASE_URL + `/search?page=${page}&limit=12&query=${query}`}`
+		)
+		return response.data
+	}
+
 	async getTopRated(page: number) {
 		const response = await axiosBase.get<IMovieList>(
 			`${
