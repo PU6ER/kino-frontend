@@ -1,9 +1,22 @@
 .pagination {
 	margin-top: 30px;
 	margin-bottom: 20px;
-	button{
-        margin-right: 5px;
-    }
+	button {
+		margin-right: 5px;
+
+		border-radius: 20px;
+		border: 1px solid transparent;
+		padding: 0.6em 1.2em;
+		font-size: 1em;
+		font-weight: 500;
+		font-family: inherit;
+		background-color: #35353543;
+		cursor: pointer;
+		transition: scale 0.25s;
+	}
+	button:hover {
+		scale: 1.1;
+	}
 }
 .active {
 	background: linear-gradient(45deg, #08f2fa, #06bcc3b3);
