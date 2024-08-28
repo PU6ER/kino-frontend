@@ -1,3 +1,4 @@
+import { BookMarked, UserRound } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import './Navbar.scss'
@@ -42,7 +43,15 @@ const Navbar = () => {
 					</button>
 				</form>
 			</div>
-			<div className=''></div>
+			<div className='navbar__links'>
+				<Link to='/bookmarks' className='link'>
+					<BookMarked />
+				</Link>
+
+				<Link to='#' className='link'>
+					<UserRound />
+				</Link>
+			</div>
 		</div>
 	)
 }
