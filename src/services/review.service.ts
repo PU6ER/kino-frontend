@@ -1,5 +1,5 @@
 import { axiosBase } from '../api/api'
-import { IReview, IReviewResponse } from '../types/movie.types'
+import { IReviewResponse } from '../types/movie.types'
 
 class ReviewService {
 	private BASE_URL = '/review'
