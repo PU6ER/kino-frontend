@@ -1,7 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { useMovie } from '../../hooks/useMovie'
 
+import { BookMarked, BookMinus } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { useReviews } from '../../hooks/useReviews'
+import { checkBookmark } from '../../utils/checkBookmark'
+import { toggleFavorite } from '../../utils/toggleFavorite'
 import './CardPage.scss'
 
 const CardPage = () => {
@@ -12,6 +16,19 @@ const CardPage = () => {
 	const { data: reviewData, isLoading: isReviewsDataLoading } = useReviews(
 		movieId ?? ''
 	)
+
+	const [isFavorite, setIsFavorite] = useState<boolean>(
+		checkBookmark(Number(movieId))
+	)
+
+	useEffect(() => {
+		setIsFavorite(checkBookmark(Number(movieId)))
+	}, [movieId])
+
+	const handleToggleFavorite = () => {
+		toggleFavorite(Number(movieId))
+		setIsFavorite(prevState => !prevState)
+	}
 
 	console.log('movieData', movieData)
 	console.log('reviewData', reviewData)
@@ -28,11 +45,21 @@ const CardPage = () => {
 								width={'100%'}
 								className='backdrop'
 							/> */}
-						<img
-							src={`${movieData.poster.url}`}
-							width={'100%'}
-							className='poster'
-						/>
+						<div className='container__left'>
+							<img
+								src={`${movieData.poster.url}`}
+								width={'100%'}
+								className='poster'
+							/>
+							<button className='bookmark' onClick={handleToggleFavorite}>
+								{isFavorite ? 'Удалить из избранного' : 'Добавить в избранное'}
+								{isFavorite ? (
+									<BookMinus size={20} />
+								) : (
+									<BookMarked size={20} />
+								)}
+							</button>
+						</div>
 
 						<div className='container__details'>
 							<div className='container__details__text'>
