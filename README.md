@@ -1,6 +1,7 @@
 <h1>KINO - каталог фильмов</h1>
 
-![Showcase Banner](https://i.imgur.com/HnOj9yK.png)
+![Showcase Banner](https://i.imgur.com/M64NHwI.png)
+![Showcase Banner](https://i.imgur.com/N7fbAWx.png)
 
 <h2>Технический стек</h2>
 
