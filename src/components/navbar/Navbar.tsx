@@ -13,6 +13,11 @@ const Navbar = () => {
 		e.preventDefault()
 		setSearchQuery(e.target.value)
 	}
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault()
+		navigate('search/' + searchQuery)
+	}
+
 	useEffect(() => {
 		if (query) {
 			setSearchQuery(query)
@@ -27,7 +32,7 @@ const Navbar = () => {
 				{/* <img src='../kino-logo.svg' className='navbar__logo' /> */}
 			</Link>
 			<div className='navbar__search'>
-				<form className='search-form'>
+				<form className='search-form' onSubmit={handleSubmit}>
 					<input
 						type='text'
 						placeholder='Поиск...'
